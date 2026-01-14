@@ -20,7 +20,7 @@ const Contact = () => {
     const detail = getValue('message')
 
     const composedMessage = [
-      `Hola Luciano, soy ${name} y me gustaria coordinar una consulta tecnica.`,
+      `Hola, soy ${name} y me gustaría coordinar una consulta técnica.`,
       location && `Partido / Localidad: ${location}.`,
       phone && `Telefono: ${phone}.`,
       email && `Email: ${email}.`,
@@ -40,18 +40,18 @@ const Contact = () => {
         <div className="grid gap-12 lg:grid-cols-2">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.4em] text-slate-500">Contacto</p>
-            <h2 className="mt-4 font-display text-3xl text-white md:text-4xl">Agenda una consulta tecnica</h2>
+            <h2 className="mt-4 font-display text-3xl text-white md:text-4xl">Agenda una consulta técnica</h2>
             <p className="mt-4 text-slate-300">
-              Completando este formulario recibiras una respuesta documentada dentro de las proximas 24 horas habiles. Se
-              comparte disponibilidad, estimacion de honorarios y documentacion requerida para iniciar.
+              Al completar este formulario recibirá una respuesta documentada dentro de las próximas 24 horas hábiles. Se
+              comparte disponibilidad, estimación de honorarios y documentación requerida para iniciar.
             </p>
             <div className="mt-8 rounded-3xl border border-white/10 bg-base-900/60 p-6">
               <p className="text-sm uppercase tracking-[0.4em] text-slate-400">Modalidad</p>
               <p className="mt-3 text-lg text-white">
-                Visitas a domicilio en AMBA y reuniones virtuales para interior del pais.
+                Visitas a domicilio en AMBA y reuniones virtuales para el interior del país.
               </p>
               <p className="mt-3 text-sm text-slate-300">
-                Tambien disponible coordinacion con escribanos, arquitectos y desarrolladores del cliente.
+                También disponible coordinación con escribanos, arquitectos y desarrolladores del cliente.
               </p>
             </div>
             <div className="mt-6 rounded-2xl border border-white/10 bg-base-900/50 p-5">
@@ -125,7 +125,7 @@ const Contact = () => {
                 Enviar solicitud
               </button>
               <p className="text-xs text-slate-400">
-                Al enviar aceptas redirigirte a WhatsApp y coordinar una breve llamada de validacion.
+                Al enviar aceptas redirigirte a WhatsApp y coordinar una breve llamada de validación.
               </p>
             </div>
           </form>

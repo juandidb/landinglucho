@@ -54,13 +54,13 @@ const Confidence = () => (
           </div>
           <p className="text-sm uppercase tracking-[0.4em] text-slate-400 dark:text-slate-400 text-base-900">Mensaje al cliente</p>
           <p className="mt-4 text-2xl font-display text-white dark:text-white text-base-900">
-            Cada consulta recibe una respuesta argumentada y respaldada en normativa vigente. La prioridad es
-            brindar certeza documental antes de cualquier inversion.
+            Cada consulta recibe una respuesta argumentada y respaldada en normativa vigente. Nuestra prioridad es
+            brindar certeza documental antes de cualquier inversión.
           </p>
           <div className="mt-6 space-y-4 text-sm text-slate-300 dark:text-slate-300 text-base-900">
             <p>- Informes personalizados en menos de 48 h.</p>
-            <p>- Seguimiento semanal con acceso directo al profesional.</p>
-            <p>- Entrega final con checklist de verificacion y copia digital segura.</p>
+            <p>- Seguimiento semanal con acceso directo al equipo.</p>
+            <p>- Entrega final con checklist de verificación y copia digital segura.</p>
           </div>
           <div className="mt-8 rounded-2xl border border-white/10 bg-base-900/70 dark:bg-base-900/70 bg-base-200 p-6">
             <p className="text-xs uppercase tracking-[0.4em] text-slate-400 dark:text-slate-400 text-base-900">Compromiso</p>

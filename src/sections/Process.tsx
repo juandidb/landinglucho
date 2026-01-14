@@ -2,22 +2,22 @@ const steps = [
   {
     title: 'Consulta y diagnostico',
     detail: 'Relevamiento de antecedentes, matricula, planos previos y objetivos del cliente.',
-    timing: 'Dia 0-2',
+    timing: 'Día 0-2',
   },
   {
     title: 'Trabajo de campo',
     detail: 'Relevamiento con GNSS y estacion total, registro fotografico y control de puntos.',
-    timing: 'Dia 3-5',
+    timing: 'Día 3-5',
   },
   {
     title: 'Procesamiento',
     detail: 'Ajustes, elaboracion de planos, informes comparativos y propuesta final.',
-    timing: 'Dia 6-9',
+    timing: 'Día 6-9',
   },
   {
     title: 'Entrega y seguimiento',
-    detail: 'Firma digital, presentacion ante organismos y acompanamiento hasta la aprobacion.',
-    timing: 'Dia 10+',
+    detail: 'Firma digital, presentación ante organismos y acompañamiento hasta la aprobación.',
+    timing: 'Día 10+',
   },
 ]
 

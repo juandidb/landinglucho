@@ -46,7 +46,7 @@ html.light .page-shell {
 
 /* Badge positioning for hero info card */
 .hero-info-badge {
-  transform: translateY(12px);
+  transform: translateY(15px);
 }
 
 @media (max-width: 640px) {
