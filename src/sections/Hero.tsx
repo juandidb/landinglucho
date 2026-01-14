@@ -8,7 +8,6 @@ const heroHighlights = [
 
 const Hero = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null)
-  const canvasRef = useRef<HTMLCanvasElement | null>(null)
 
   useEffect(() => {
     const v = videoRef.current
@@ -21,93 +20,6 @@ const Hero = () => {
         clearTimeout(timeoutId)
         timeoutId = null
       }
-    }
-
-    function drawCoverFrameToCanvas() {
-      const c = canvasRef.current
-      if (!c) return
-      const ctx = c.getContext('2d')
-      if (!ctx) return
-      const vw = v.videoWidth || 1
-      const vh = v.videoHeight || 1
-
-      // match canvas display size
-      const rect = v.getBoundingClientRect()
-      const cw = Math.max(1, Math.round(rect.width))
-      const ch = Math.max(1, Math.round(rect.height))
-      c.width = cw
-      c.height = ch
-
-      const videoAspect = vw / vh
-      const canvasAspect = cw / ch
-
-      let sx = 0
-      let sy = 0
-      let sWidth = vw
-      let sHeight = vh
-
-      // cover-style crop
-      if (videoAspect > canvasAspect) {
-        sWidth = Math.round(vh * canvasAspect)
-      } else {
-        sHeight = Math.round(vw / canvasAspect)
-      }
-
-      // object-position parsing: respect CSS like "center 20%" or "50% 20%"
-      const computed = window.getComputedStyle(v)
-      const objPos = (computed.objectPosition || '50% 50%').trim()
-      const parts = objPos.split(/\s+/)
-      let xPart = parts[0] || '50%'
-      let yPart = parts[1] || '50%'
-
-      const mapKeyword = (val: string) => {
-        if (val === 'center') return '50%'
-        if (val === 'left') return '0%'
-        if (val === 'right') return '100%'
-        if (val === 'top') return '0%'
-        if (val === 'bottom') return '100%'
-        return val
-      }
-
-      xPart = mapKeyword(xPart)
-      yPart = mapKeyword(yPart)
-
-      const parsePct = (s: string) => {
-        const m = s.match(/([0-9.]+)%/) || s.match(/([0-9.]+)/)
-        return m ? Number(m[1]) / 100 : 0.5
-      }
-
-      const xPct = parsePct(xPart)
-      const yPct = parsePct(yPart)
-
-      if (sWidth < vw) sx = Math.round((vw - sWidth) * xPct)
-      if (sHeight < vh) sy = Math.round((vh - sHeight) * yPct)
-
-      ctx.clearRect(0, 0, cw, ch)
-      try {
-        const computed = window.getComputedStyle(v)
-        // apply any CSS filters the video might have (brightness/contrast/etc)
-        // ctx.filter accepts the same string as CSS `filter` in modern browsers
-        ctx.save()
-        ctx.filter = computed.filter || 'none'
-        ctx.drawImage(v, sx, sy, sWidth, sHeight, 0, 0, cw, ch)
-        ctx.restore()
-
-        // apply the same overlay color the page uses so the captured frame
-        // visually matches the darkened video (rgba(14,23,36,0.68))
-        ctx.fillStyle = 'rgba(14,23,36,0.68)'
-        ctx.fillRect(0, 0, cw, ch)
-      } catch (e) {
-        // drawing may fail if video not ready
-      }
-      // show canvas
-      c.style.display = 'block'
-    }
-
-    function hideCanvas() {
-      const c = canvasRef.current
-      if (!c) return
-      c.style.display = 'none'
     }
 
     function schedulePause() {
@@ -128,28 +40,13 @@ const Hero = () => {
       schedulePause()
     }
 
-    function handlePauseEvent() {
-      clearScheduledPause()
-      // draw the exact paused frame into the canvas and show it
-      drawCoverFrameToCanvas()
-    }
-
-    function handlePlayEvent() {
-      // hide canvas overlay when playing
-      hideCanvas()
-      schedulePause()
-    }
-
     // Ensure video doesn't loop
     v.removeAttribute('loop')
 
     v.addEventListener('loadedmetadata', schedulePause)
-    v.addEventListener('play', handlePlayEvent)
+    v.addEventListener('play', schedulePause)
     v.addEventListener('seeking', handleSeeking)
-    v.addEventListener('pause', handlePauseEvent)
-
-    // keep canvas hidden initially
-    hideCanvas()
+    v.addEventListener('pause', clearScheduledPause)
 
     // In case metadata already loaded
     schedulePause()
@@ -157,9 +54,9 @@ const Hero = () => {
     return () => {
       clearScheduledPause()
       v.removeEventListener('loadedmetadata', schedulePause)
-      v.removeEventListener('play', handlePlayEvent)
+      v.removeEventListener('play', schedulePause)
       v.removeEventListener('seeking', handleSeeking)
-      v.removeEventListener('pause', handlePauseEvent)
+      v.removeEventListener('pause', clearScheduledPause)
     }
   }, [])
   return (
@@ -188,12 +85,6 @@ const Hero = () => {
             muted
             playsInline
             preload="metadata"
-          />
-
-          <canvas
-            ref={canvasRef}
-            className="absolute inset-0 w-full h-full z-20 pointer-events-none"
-            style={{ display: 'none' }}
           />
 
           {/* Overlay oscuro para mejorar contraste del texto */}

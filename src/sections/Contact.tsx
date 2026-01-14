@@ -1,4 +1,4 @@
-import { FormEvent } from 'react'
+import type { FormEvent } from 'react'
 
 const whatsappNumber = '5492317409836'
 const directPhoneDisplay = '+54 9 2317 409836'

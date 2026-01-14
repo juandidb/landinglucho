@@ -44,11 +44,11 @@ const Services = () => (
         </a>
       </div>
 
-      <div className="mt-12 grid gap-6 md:grid-cols-2 reveal-group">
+      <div className="mt-12 grid gap-6 md:grid-cols-2">
         {services.map((service) => (
           <article
             key={service.title}
-            className="reveal group rounded-3xl border border-white/5 bg-base-900/40 p-8 shadow-soft transition duration-300 hover:-translate-y-1 hover:bg-base-900/70"
+            className="group rounded-3xl border border-white/5 bg-base-900/40 p-8 shadow-soft transition duration-300 hover:-translate-y-1 hover:bg-base-900/70"
           >
             <div className="flex items-center justify-between">
               <h3 className="font-display text-2xl text-white">{service.title}</h3>
