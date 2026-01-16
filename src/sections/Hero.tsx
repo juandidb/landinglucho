@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 
 const heroHighlights = [
-  { label: 'Anos de practica', value: '+5' },
-  { label: 'Mensuras residenciales', value: '45+' },
-  { label: 'Cobertura', value: 'AMBA y Provincia' },
+  { label: 'Años de trayectoria', value: '+5' },
+  { label: 'Proyectos ejecutados', value: '45+' },
+  { label: 'Cobertura regional', value: 'AMBA y Provincia' },
 ]
 
 const Hero = () => {
@@ -12,6 +12,7 @@ const Hero = () => {
   useEffect(() => {
     const v = videoRef.current
     if (!v) return
+    const video = v
 
     let timeoutId: number | null = null
 
@@ -24,15 +25,15 @@ const Hero = () => {
 
     function schedulePause() {
       clearScheduledPause()
-      const dur = v.duration
+      const dur = video.duration
       if (!isFinite(dur) || dur <= 1) return
-      const ms = (dur - 1 - v.currentTime) * 1000
+      const ms = (dur - 1 - video.currentTime) * 1000
       if (ms <= 0) {
-        v.pause()
+        video.pause()
         return
       }
       timeoutId = window.setTimeout(() => {
-        v.pause()
+        video.pause()
       }, ms)
     }
 
@@ -41,22 +42,22 @@ const Hero = () => {
     }
 
     // Ensure video doesn't loop
-    v.removeAttribute('loop')
+    video.removeAttribute('loop')
 
-    v.addEventListener('loadedmetadata', schedulePause)
-    v.addEventListener('play', schedulePause)
-    v.addEventListener('seeking', handleSeeking)
-    v.addEventListener('pause', clearScheduledPause)
+    video.addEventListener('loadedmetadata', schedulePause)
+    video.addEventListener('play', schedulePause)
+    video.addEventListener('seeking', handleSeeking)
+    video.addEventListener('pause', clearScheduledPause)
 
     // In case metadata already loaded
     schedulePause()
 
     return () => {
       clearScheduledPause()
-      v.removeEventListener('loadedmetadata', schedulePause)
-      v.removeEventListener('play', schedulePause)
-      v.removeEventListener('seeking', handleSeeking)
-      v.removeEventListener('pause', clearScheduledPause)
+      video.removeEventListener('loadedmetadata', schedulePause)
+      video.removeEventListener('play', schedulePause)
+      video.removeEventListener('seeking', handleSeeking)
+      video.removeEventListener('pause', clearScheduledPause)
     }
   }, [])
   return (
@@ -68,7 +69,7 @@ const Hero = () => {
       <div className="absolute left-0 top-0 w-full" style={{ height: '47vh' }} aria-hidden>
         <div className="absolute left-0 bottom-0 w-full flex justify-center items-end z-40" style={{ height: '47vh', pointerEvents: 'none' }}>
           <p className="mb-4 font-display text-xs uppercase tracking-[0.35em] text-white drop-shadow-lg bg-transparent sm:bg-base-900/60 px-4 py-2 rounded-t-xl hero-info-badge text-center sm:text-left" style={{ pointerEvents: 'auto' }}>
-            Ingeniero Agrimensor MP 3012 // Registro Profesional
+            Estudio de Agrimensura y Topografía — Servicios Corporativos
           </p>
         </div>
 
@@ -155,14 +156,15 @@ const Hero = () => {
               <span className="inline md:block md:whitespace-nowrap">Seguridad en cada proyecto.</span>
             </h1>
             <p className="mt-6 mx-auto max-w-xl md:max-w-2xl lg:max-w-3xl text-lg text-slate-300">
-              Acompañamos a familias y desarrolladores en mensuras, subdivisiones y relevamientos complejos, garantizando cumplimiento normativo y tiempos de respuesta eficientes.
+              Brindamos soluciones integrales para desarrollos inmobiliarios, empresas e instituciones en mensuras, subdivisiones
+              y relevamientos de alta complejidad, garantizando cumplimiento normativo, control de calidad y entregables ejecutivos.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <a
                 href="#contacto"
                 className="rounded-full bg-white px-6 py-3 text-sm font-semibold uppercase tracking-wide text-base-900 transition hover:bg-slate-100"
               >
-                Solicitar presupuesto
+                Solicitar propuesta
               </a>
               <a
                 href="#contacto"

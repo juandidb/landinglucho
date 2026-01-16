@@ -1,23 +1,23 @@
 const services = [
   {
-    title: 'Mensuras',
+    title: 'Mensuras y Georreferenciación Corporativa',
     description:
-      'Mensuras urbanas y rurales con entrega de planos georreferenciados y asesoramiento completo ante organismos provinciales.',
+      'Mensuras urbanas y rurales con entrega de planos georreferenciados, informes ejecutivos y asesoramiento para cumplimiento regulatorio. Entregables listos para procesos de inversión y aprobación institucional.',
   },
   {
-    title: 'Subdivisiones',
+    title: 'Gestión de Subdivisiones y Desarrollo',
     description:
-      'Desarrollo de proyectos de subdivision y unificacion parcelaria, respetando indicadores locales y cronogramas civiles.',
+      'Planificación y gestión integral de subdivisiones y unificaciones parcelarias, coordina-miento con autoridades locales, cronogramas de obra y control presupuestario para desarrollos a escala.',
   },
   {
-    title: 'Relevamientos topograficos',
+    title: 'Relevamientos Topográficos de Precisión',
     description:
-      'Modelos digitales y mallas de puntos para obra nueva, reformas y regularizaciones de construcciones existentes.',
+      'Relevamientos con tecnología LIDAR y estaciones totales, mallas de puntos y modelos digitales de terreno para proyectos de infraestructura, obra pública y privados con control de calidad certificado.',
   },
   {
-    title: 'Catastro',
+    title: 'Saneamiento Catastral y Cumplimiento',
     description:
-      'Actualizacion y saneamiento de estados parcelarios, con seguimiento documental hasta su aprobacion final.',
+      'Actualización y saneamiento registral, gestión documental y seguimiento hasta la aprobación final ante organismos competentes. Mitigamos riesgos legales y agilizamos trámites.',
   },
 ]
 
@@ -31,15 +31,15 @@ const Services = () => (
             Especialidades enfocadas en propietarios y desarrollos
           </h2>
           <p className="mt-4 max-w-2xl text-slate-300">
-            Cada servicio se ejecuta con equipos propios, reportes en tiempo real y documentacion lista para
-            presentar ante municipios, registros y entidades crediticias.
+            Ofrecemos soluciones técnicas integrales para desarrollos inmobiliarios y proyectos corporativos, respaldadas
+            por gestión de proyecto dedicada, control de calidad y entregables preparados para inversores y organismos.
           </p>
         </div>
         <a
           href="#contacto"
-          className="inline-flex items-center gap-2 text-sm font-semibold text-white transition hover:text-slate-200"
+          className="inline-flex items-center gap-2 rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-indigo-700"
         >
-          Ver agenda disponible
+          Solicitar propuesta
           <span aria-hidden className="text-lg">→</span>
         </a>
       </div>
