@@ -49,7 +49,7 @@ const About = () => (
         <div className="space-y-6">
           <div className="overflow-hidden rounded-3xl border border-white/10 bg-base-800/40 dark:bg-base-800/40 bg-base-200">
             <img
-              src="/assets/about-equipo.jpg"
+              src={import.meta.env.BASE_URL + 'assets/about-equipo.jpg'}
               alt="Equipo del estudio realizando relevamientos en campo"
               className="h-64 w-full object-cover"
               loading="lazy"

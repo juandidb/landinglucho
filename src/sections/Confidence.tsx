@@ -42,7 +42,7 @@ const Confidence = () => (
         <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-base-900/80 to-base-800/40 dark:from-base-900/80 dark:to-base-800/40 from-base-200 to-base-100 p-8 shadow-soft overflow-hidden">
           <div className="relative mb-8 overflow-hidden rounded-2xl border border-white/10">
             <img
-              src="/assets/confidence-instrumento.jpg"
+              src={import.meta.env.BASE_URL + 'assets/confidence-instrumento.jpg'}
               alt="Instrumental topografico durante medicion en ruta"
               className="h-56 w-full object-cover"
               loading="lazy"

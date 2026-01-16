@@ -31,7 +31,7 @@ export default function StickyHeader() {
         >
           <span className="relative flex items-center justify-center text-white">
             <img
-              src="/1.png"
+              src={import.meta.env.BASE_URL + '1.png'}
               alt="Logo"
               className="block h-10 w-auto md:h-12 lg:h-14 transition-opacity duration-150 ease-out group-hover:opacity-0"
               loading="lazy"
@@ -39,7 +39,7 @@ export default function StickyHeader() {
               aria-hidden
             />
             <img
-              src="/2.png"
+              src={import.meta.env.BASE_URL + '2.png'}
               alt="Logo hover"
               className="absolute inset-0 m-auto h-10 w-auto md:h-12 lg:h-14 opacity-0 transition-opacity duration-150 ease-out group-hover:opacity-100"
               loading="lazy"

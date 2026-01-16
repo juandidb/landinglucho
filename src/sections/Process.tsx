@@ -69,7 +69,7 @@ const Process = () => (
         </div>
         <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-base-800/40 dark:bg-base-800/40 bg-base-200">
           <img
-            src="/assets/process-campo.jpg"
+            src={import.meta.env.BASE_URL + 'assets/process-campo.jpg'}
             alt="Equipo de topografia instalando tripode en obra"
             className="h-full w-full object-cover"
             loading="lazy"

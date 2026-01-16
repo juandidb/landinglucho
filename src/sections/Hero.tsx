@@ -80,8 +80,8 @@ const Hero = () => {
             ref={videoRef}
             className="h-full w-full object-cover"
             style={{ objectPosition: 'center 20%' }}
-            src="/assets/High_Tech_Surveyor_Twilight_Video.mp4"
-            poster="/assets/hero-topografia.jpg"
+            src={import.meta.env.BASE_URL + 'assets/High_Tech_Surveyor_Twilight_Video.mp4'}
+            poster={import.meta.env.BASE_URL + 'assets/hero-topografia.jpg'}
             autoPlay
             muted
             playsInline
@@ -110,7 +110,7 @@ const Hero = () => {
           >
             <span className="relative flex items-center justify-center text-white">
               <img
-                src="/1.png"
+                src={import.meta.env.BASE_URL + '1.png'}
                 alt="Logo"
                 className="block h-10 w-auto md:h-14 lg:h-16 transform scale-125 md:scale-125 lg:scale-125 transition-opacity duration-150 ease-out group-hover:opacity-0"
                 loading="lazy"
@@ -118,7 +118,7 @@ const Hero = () => {
                 aria-hidden
               />
               <img
-                src="/2.png"
+                src={import.meta.env.BASE_URL + '2.png'}
                 alt="Logo hover"
                 className="absolute inset-0 m-auto h-10 w-auto md:h-14 lg:h-16 transform scale-125 md:scale-125 lg:scale-125 opacity-0 transition-opacity duration-150 ease-out group-hover:opacity-100"
                 loading="lazy"

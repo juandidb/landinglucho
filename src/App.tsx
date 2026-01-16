@@ -5,6 +5,7 @@ import About from './sections/About'
 import Confidence from './sections/Confidence'
 import Process from './sections/Process'
 import Contact from './sections/Contact'
+import Footer from './components/Footer'
 
 const whatsappUrl =
   'https://wa.me/5492317409836?text=Hola%20Luciano%2C%20quisiera%20coordinar%20una%20consulta%20de%20agrimensura.'
@@ -35,48 +36,7 @@ function App() {
       <Confidence />
       <Process />
       <Contact />
-      <footer className="border-t border-white/5 bg-base-900/80 py-10 text-center text-xs uppercase tracking-[0.4em] text-slate-500">
-        <p>&copy; {currentYear} Luciano Clerico - Profesional matriculado en Buenos Aires - MP 3012</p>
-        <p className="mt-4 text-[0.6rem] tracking-[0.35em] text-slate-500">Todos los derechos reservados</p>
-        <div className="mt-4 flex flex-wrap items-center justify-center gap-3 tracking-[0.3em] text-slate-400">
-          <span className="font-semibold">Desarrollado por</span>
-          <a
-            href="#"
-            aria-label="Visitar DivDesign"
-            className="group relative inline-flex items-center transition duration-300 hover:opacity-100"
-          >
-            <img
-              src="/logo.png"
-              alt="DivDesign"
-              className="h-6 w-auto filter brightness-125 contrast-125 drop-shadow-[0_0_0.75rem_rgba(255,255,255,0.4)] transition duration-300 ease-out group-hover:scale-110 group-hover:drop-shadow-[0_0_1.5rem_rgba(59,130,246,0.7)] group-hover:rotate-1"
-              loading="lazy"
-            />
-          </a>
-        </div>
-        <div className="mt-6 flex items-center justify-center">
-          <a
-            href="#inicio"
-            className="group flex items-center gap-3 text-xs uppercase tracking-[0.35em] text-slate-300 transition hover:text-white"
-            aria-label="Volver al inicio"
-          >
-            <span className="flex items-center justify-center text-white">
-              <img
-                src="/assets/logo-navbar.svg"
-                alt=""
-                className="h-6 w-6"
-                loading="lazy"
-                aria-hidden
-              />
-            </span>
-            <span className="font-display text-left leading-tight">
-              Luciano Clerico
-              <span className="block text-[0.55rem] tracking-[0.5em] text-slate-400 group-hover:text-white/80">
-                Estudio de Agrimensura
-              </span>
-            </span>
-          </a>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
