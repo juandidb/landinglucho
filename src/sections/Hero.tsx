@@ -254,20 +254,19 @@ const Hero = () => {
               onClick={togglePlayback}
               aria-pressed={!isPlaying}
               aria-label={isPlaying ? 'Pausar video' : 'Reproducir video'}
-              className="hidden sm:flex absolute z-50 left-6 bottom-6 video-control-minimal"
+              className="hidden sm:flex absolute z-50 left-6 bottom-6 h-11 w-11 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-white hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
               title={isPlaying ? 'Pausar' : 'Reproducir'}
             >
-              {/* Minimal icon: small outlined circle with simple symbol */}
-              {isPlaying ? (
-                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-                  <rect x="6" y="5" width="3" height="14" rx="0.6" fill="currentColor" />
-                  <rect x="15" y="5" width="3" height="14" rx="0.6" fill="currentColor" />
-                </svg>
-              ) : (
-                <svg className="h-4 w-4" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-                  <path d="M6 4l12 8-12 8V4z" fill="currentColor" />
-                </svg>
-              )}
+              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                {isPlaying ? (
+                  <g stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M6 5v14" />
+                    <path d="M18 5v14" />
+                  </g>
+                ) : (
+                  <path d="M5 3v18l15-9L5 3z" fill="currentColor" />
+                )}
+              </svg>
             </button>
           )}
 
