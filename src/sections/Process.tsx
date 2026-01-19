@@ -25,7 +25,7 @@ const Process = () => (
   <section id="proceso" className="bg-base-900 py-20 text-slate-100 dark:bg-base-900 bg-base-100 text-base-900">
     <div className="mx-auto max-w-6xl px-6">
       <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-        <div>
+        <div className="reveal">
           <p className="text-xs font-semibold uppercase tracking-[0.4em] text-slate-500 dark:text-slate-500 text-base-900">Proceso</p>
           <h2 className="mt-4 font-display text-3xl text-white dark:text-white text-base-900 md:text-4xl">
             Metodologia clara, tiempos definidos y trazabilidad de datos
@@ -49,7 +49,7 @@ const Process = () => (
           {steps.map((step, index) => (
             <article
               key={step.title}
-              className="relative rounded-3xl border border-white/10 bg-base-800/50 dark:bg-base-800/50 bg-base-200 p-6 transition hover:border-white/30"
+              className="relative rounded-3xl border border-white/10 bg-base-800/50 dark:bg-base-800/50 bg-base-200 p-6 transition hover:border-white/30 reveal"
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4">
@@ -67,7 +67,7 @@ const Process = () => (
             </article>
           ))}
         </div>
-        <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-base-800/40 dark:bg-base-800/40 bg-base-200">
+        <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-base-800/40 dark:bg-base-800/40 bg-base-200 reveal">
           <img
             src={import.meta.env.BASE_URL + 'assets/process-campo.jpg'}
             alt="Equipo de topografia instalando tripode en obra"

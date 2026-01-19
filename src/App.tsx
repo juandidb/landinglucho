@@ -1,19 +1,25 @@
 import Hero from './sections/Hero'
 import StickyHeader from './StickyHeader'
+import useReveal from './hooks/useReveal'
 import Services from './sections/Services'
 import About from './sections/About'
 import Confidence from './sections/Confidence'
 import Process from './sections/Process'
+import Gallery from './sections/Gallery'
+import Testimonials from './sections/Testimonials'
 import Contact from './sections/Contact'
 import Footer from './components/Footer'
+import Preloader from './components/Preloader'
 
 const whatsappUrl =
   'https://wa.me/5492317409836?text=Hola%20Luciano%2C%20quisiera%20coordinar%20una%20consulta%20de%20agrimensura.'
-const currentYear = new Date().getFullYear()
 
 function App() {
+  useReveal()
+
   return (
     <div className="page-shell bg-base-900 text-slate-100">
+      <Preloader />
       <StickyHeader />
       <a
         href={whatsappUrl}
@@ -35,6 +41,8 @@ function App() {
       <About />
       <Confidence />
       <Process />
+      <Gallery />
+      <Testimonials />
       <Contact />
       <Footer />
     </div>

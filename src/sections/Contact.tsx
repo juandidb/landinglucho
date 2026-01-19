@@ -38,7 +38,7 @@ const Contact = () => {
     <section id="contacto" className="bg-base-800/70 py-20 text-slate-100">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-12 lg:grid-cols-2">
-          <div>
+          <div className="reveal">
             <p className="text-xs font-semibold uppercase tracking-[0.4em] text-slate-500">Contacto</p>
             <h2 className="mt-4 font-display text-3xl text-white md:text-4xl">Agenda una consulta técnica</h2>
             <p className="mt-4 text-slate-300">
@@ -69,7 +69,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <form className="rounded-3xl border border-white/10 bg-base-900/70 p-8 shadow-soft" onSubmit={handleSubmit}>
+          <form className="rounded-3xl border border-white/10 bg-base-900/70 p-8 shadow-soft reveal" onSubmit={handleSubmit}>
             <div className="grid gap-6">
               <label className="flex flex-col gap-2 text-sm text-slate-300">
                 Nombre y apellido

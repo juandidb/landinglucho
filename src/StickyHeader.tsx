@@ -48,23 +48,38 @@ export default function StickyHeader() {
             />
           </span>
         </a>
+        {/* Desktop links */}
         <div className="hidden gap-6 md:flex">
-          <a href="#servicios" className="transition hover:text-white">
+          <a href="#servicios" className="transition hover:text-sky-400">
             Servicios
           </a>
-          <a href="#proceso" className="transition hover:text-white">
+          <a href="#proceso" className="transition hover:text-sky-400">
             Proceso
           </a>
-          <a href="#contacto" className="transition hover:text-white">
+          <a href="#galeria" className="transition hover:text-sky-400">
+            Galería
+          </a>
+          <a href="#opiniones" className="transition hover:text-sky-400">
+            Opiniones
+          </a>
+          <a href="#contacto" className="transition hover:text-sky-400">
             Contacto
           </a>
         </div>
-        <a
-          href="#contacto"
-          className="rounded-full border border-white/20 px-5 py-2 text-xs font-medium uppercase tracking-wide text-white transition hover:border-white"
-        >
-          Consultar
-        </a>
+
+        {/* Mobile hamburger & CTA */}
+        <div className="flex items-center gap-3 md:hidden">
+          <a href="#contacto" className="cta-secondary px-3 py-2 text-xs">Consultar</a>
+          <button
+            className="inline-flex items-center justify-center h-10 w-10 rounded-full border border-white/10 text-white bg-white/6"
+            aria-label="Abrir menú"
+            onClick={(e) => window.dispatchEvent(new CustomEvent('mobile-menu-toggle', { detail: { trigger: e.currentTarget } }))}
+          >
+            <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden>
+              <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+        </div>
       </div>
     </nav>
   );

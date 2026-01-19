@@ -20,7 +20,7 @@ const Confidence = () => (
   <section className="bg-base-800/50 py-20 text-slate-100 dark:bg-base-800/50 dark:text-slate-100 bg-base-100 text-base-900">
     <div className="mx-auto max-w-6xl px-6">
       <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-        <div>
+        <div className="reveal">
           <p className="text-xs font-semibold uppercase tracking-[0.4em] text-slate-500 dark:text-slate-500 text-base-900">Solidez y confianza</p>
           <h2 className="mt-4 font-display text-3xl text-white dark:text-white text-base-900 md:text-4xl">Respaldo profesional para decisiones con impacto patrimonial</h2>
           <p className="mt-4 text-slate-300 dark:text-slate-300 text-base-900">
@@ -30,7 +30,7 @@ const Confidence = () => (
           </p>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {credentials.map((item) => (
-              <article key={item.label} className="rounded-3xl border border-white/10 bg-base-900/60 dark:bg-base-900/60 bg-base-200 p-6">
+              <article key={item.label} className="rounded-3xl border border-white/10 bg-base-900/60 dark:bg-base-900/60 bg-base-200 p-6 reveal">
                 <p className="text-4xl font-semibold text-white dark:text-white text-base-900">{item.value}</p>
                 <p className="mt-1 text-xs uppercase tracking-wide text-slate-400 dark:text-slate-400 text-base-900">{item.label}</p>
                 <p className="mt-3 text-sm text-slate-400 dark:text-slate-400 text-base-900">{item.detail}</p>
@@ -39,7 +39,7 @@ const Confidence = () => (
           </div>
         </div>
 
-        <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-base-900/80 to-base-800/40 dark:from-base-900/80 dark:to-base-800/40 from-base-200 to-base-100 p-8 shadow-soft overflow-hidden">
+        <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-base-900/80 to-base-800/40 dark:from-base-900/80 dark:to-base-800/40 from-base-200 to-base-100 p-8 shadow-soft overflow-hidden reveal">
           <div className="relative mb-8 overflow-hidden rounded-2xl border border-white/10">
             <img
               src={import.meta.env.BASE_URL + 'assets/confidence-instrumento.jpg'}

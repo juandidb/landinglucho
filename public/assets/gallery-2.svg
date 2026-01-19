@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="100%" height="100%" fill="#06202a"/>
+  <g fill="#7dd3fc" opacity="0.95" transform="translate(60,60)">
+    <rect width="520" height="360" rx="18" fill="#031426" />
+    <rect x="30" y="30" width="460" height="300" rx="10" fill="#042036" />
+  </g>
+  <text x="600" y="420" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="36" fill="#cbd5e1">Mockup / Foto de obra 2</text>
+</svg>

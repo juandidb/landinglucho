@@ -30,6 +30,7 @@ const Footer = () => {
             <ul className="space-y-2 text-base">
               <li><a href="#servicios" className="hover:text-sky-400 transition">Servicios</a></li>
               <li><a href="#proceso" className="hover:text-sky-400 transition">Proceso</a></li>
+              <li><a href="#opiniones" className="hover:text-sky-400 transition">Opiniones</a></li>
               <li><a href="#sobre" className="hover:text-sky-400 transition">Sobre nosotros</a></li>
               <li><a href="#contacto" className="hover:text-sky-400 transition">Contacto</a></li>
             </ul>
